@@ -1,9 +1,11 @@
 from django import forms
 
-class RegistroFormulario(forms.Form):
+class ClientesFormulario(forms.Form):
     nombre = forms.CharField(max_length=40)
-    camada = forms.IntegerField()
+    apellidos = forms.CharField(max_length=40)
+    telefono = forms.IntegerField()
+    email = forms.EmailField()
 
 
 class BusquedaFormulario(forms.Form):
-    camada = forms.IntegerField()
+    nombre = forms.CharField(max_length=40)

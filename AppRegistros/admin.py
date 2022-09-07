@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from AppRegistros.models import Clientes, Automovil
+
+admin.site.register(Clientes)

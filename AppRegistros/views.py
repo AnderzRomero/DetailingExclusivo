@@ -1,4 +1,35 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+from AppRegistros.forms import ClientesFormulario
+from AppRegistros.models import Clientes
+
+
+def registros(request):
+
+    if request.method == 'POST':
+
+        mi_formulario = ClientesFormulario(request.POST)
+
+        if mi_formulario.is_valid():
+
+            data = mi_formulario.cleaned_data
+
+            cliente1 = Clientes(nombre=data.get('nombre'), apellidos=data.get('apellidos'), telefono=data.get('telefono'), email=data.get('email'))
+            cliente1.save()
+
+            return redirect('AppRegistrosRegistros')
+
+    clientes = Clientes.objects.all()
+
+    contexto = {
+        'form': ClientesFormulario(),
+        'clientes' : clientes
+    }
+
+    return render(request, 'AppBody/registros.html', contexto)
+
+
+
 
 def inicio(request):
 
@@ -12,9 +43,6 @@ def portafolio(request):
 
     return render(request, 'AppBody/portafolio.html')
 
-def registros(request):
-
-    return render(request, 'AppBody/registros.html')
 
 def equipo(request):
 

@@ -3,20 +3,24 @@
     Registros
 {% endblock title %}
 {% block registros %}
+    <section class="page-section" id="contact">
+        <div class="text-center">
 
-    <form action="" method="POST">
-        {% csrf_token %}
+            <form action="" method="POST">
+                {% csrf_token %}
 
-        {{ form.as_p }}
+                {{ form.as_p }}
 
-        <input type="submit" value="Enviar">
+                <input type="submit" value="Enviar">
 
-    </form>
+            </form>
 
-    {% for curso in cursos %}
-        El nombre del curso es: {{ curso.nombre }} con la camada {{ curso.camada }}
-        <br>
-    {% endfor %}
+            {% for cliente in clientes %}
+                El nombre del cliente es: {{ cliente.nombre }} con la apellido {{ cliente.apellidos }} numero de telefono {{ cliente.telefono }} y correo electronico: {{ cliente.email }}
+                <br>
+            {% endfor %}
+        </div>
+    </section>
 
 {% endblock registros %}
 
