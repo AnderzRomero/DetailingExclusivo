@@ -7,6 +7,6 @@ class ClientesFormulario(forms.Form):
     email = forms.EmailField()
 
 
-class BusquedaFormulario(forms.Form):
+class BusquedaNombreFormulario(forms.Form):
     nombre = forms.CharField(max_length=40)
 

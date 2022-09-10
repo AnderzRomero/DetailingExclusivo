@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% block title %}
+    Busqueda clientes
+{% endblock %}
+{% block busqueda %}
+    {% load static %}
+
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Buscar cliente</h2>
+                    <h3 class="section-subheading text-muted">En este apartado podemos revisar nuestros clientes</h3>
+
+                    <form class="section-heading text-uppercase" id="contactForm" data-sb-form-api-token="API_TOKEN" action="/AppRegistros/busqueda_nombre_post" method="GET">
+                        {% csrf_token %}
+
+                        {{ form.as_p }}
+
+                        <input type="submit" value="Buscar">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

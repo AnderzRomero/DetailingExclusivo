@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+{% block title %}
+    Busqueda cliente filtrado
+{% endblock title %}
+{% block busquedafiltrado %}
+
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Clientes</h2>
+
+                    <form class="section-heading text-uppercase" id="contactForm" data-sb-form-api-token="API_TOKEN" action="/AppRegistros/busqueda_nombre_post" method="GET">
+                        {% for cliente in clientes %}
+                            {{ cliente.nombre }}<br>
+                            Apellido <br>
+                            {{ cliente.apellidos }} <br>
+                            telefono: <br>
+                            {{ cliente.telefono }}<br>
+                            El correo electronico <br>
+                            {{ cliente.email }}
+                            <br>
+                        {% endfor %}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock busquedafiltrado %}
+
+
+

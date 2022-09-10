@@ -34,7 +34,7 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosPortafolio' %}">Portafolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosRegistros' %}">Registros</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosEquipo' %}">Equipo</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosBusqueda' %}">Busquedas</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosBusquedaNombre' %}">Busquedas</a></li>
             </ul>
         </div>
     </div>
@@ -46,6 +46,8 @@
 {% block registros %}{% endblock registros %}
 {% block equipo %}{% endblock equipo %}
 {% block busqueda %}{% endblock busqueda %}
+{% block busquedafiltrado %}{% endblock busquedafiltrado %}
+
 
 
 

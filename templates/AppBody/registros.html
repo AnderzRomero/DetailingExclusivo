@@ -3,22 +3,24 @@
     Registros
 {% endblock title %}
 {% block registros %}
+
     <section class="page-section" id="contact">
-        <div class="text-center">
+        <div class="container">
+            <div class="text-center">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Registrar Cliente</h2>
+                    <h3 class="section-subheading text-muted">En este apartado podemos registrar nuestros clientes</h3>
 
-            <form action="" method="POST">
-                {% csrf_token %}
+                    <form class="section-heading text-uppercase" id="contactForm" data-sb-form-api-token="API_TOKEN" action="" method="POST">
+                        {% csrf_token %}
 
-                {{ form.as_p }}
+                        {{ form.as_p }}
 
-                <input type="submit" value="Enviar">
+                        <input type="submit" value="Enviar">
 
-            </form>
-
-            {% for cliente in clientes %}
-                El nombre del cliente es: {{ cliente.nombre }} con la apellido {{ cliente.apellidos }} numero de telefono {{ cliente.telefono }} y correo electronico: {{ cliente.email }}
-                <br>
-            {% endfor %}
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
