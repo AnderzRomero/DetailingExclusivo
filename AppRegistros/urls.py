@@ -1,6 +1,6 @@
 from django.urls import path
 
-from AppRegistros.views import inicio, servicios, portafolio, registros, equipo, contactos
+from AppRegistros.views import inicio, servicios, portafolio, registros, equipo, busquedas
 
 urlpatterns = [
     path('', inicio, name='AppRegistrosInicio'),
@@ -8,5 +8,5 @@ urlpatterns = [
     path('portafolio/', portafolio, name='AppRegistrosPortafolio'),
     path('registros/', registros, name='AppRegistrosRegistros'),
     path('equipo/', equipo, name='AppRegistrosEquipo'),
-    path('contactos/', contactos, name='AppRegistrosContactos'),
+    path('busquedas/', busquedas, name='AppRegistrosBusqueda'),
 ]

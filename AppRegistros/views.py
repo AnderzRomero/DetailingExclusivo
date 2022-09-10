@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from AppRegistros.forms import ClientesFormulario
+from AppRegistros.forms import ClientesFormulario, BusquedaFormulario
 from AppRegistros.models import Clientes
 
 
@@ -29,6 +29,13 @@ def registros(request):
     return render(request, 'AppBody/registros.html', contexto)
 
 
+def busquedas(request):
+
+    contexto = {
+        'form': BusquedaFormulario(),
+    }
+
+    return render(request, 'AppBody/busqueda.html', contexto)
 
 
 def inicio(request):
@@ -48,6 +55,3 @@ def equipo(request):
 
     return render(request, 'AppBody/equipo.html')
 
-def contactos(request):
-
-    return render(request, 'AppBody/contactos.html')

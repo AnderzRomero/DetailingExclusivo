@@ -9,3 +9,4 @@ class ClientesFormulario(forms.Form):
 
 class BusquedaFormulario(forms.Form):
     nombre = forms.CharField(max_length=40)
+
