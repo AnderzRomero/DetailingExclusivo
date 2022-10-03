@@ -28,13 +28,34 @@
             <i class="fas fa-bars ms-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
+
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosInicio' %}">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosServicios' %}">Servicios</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosPortafolio' %}">Portafolio</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosRegistros' %}">Registros</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosEquipo' %}">Equipo</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosBusquedaNombre' %}">Busquedas</a></li>
+                {% if user.is_authenticated %}
+                    <img height="40px" src="{{ user.avatar.imagen.url }}" alt="">
+                    <h5 style="padding: 5px 40px 0px 0px ">User:{{ user.get_username }}</h5>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosInicio' %}">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosServicios' %}">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosPortafolio' %}">Portafolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosEquipo' %}">Equipo</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosBusquedaNombre' %}">Busqueda</a></li>
+                    <li><a class="btn btn-primary" href="{% url 'UserExclusivoRegister' %}">Administrador</a>
+                        <ul>
+                            <li><a class="btn btn-primary" href="{% url 'UserExclusivoEditar' %}">Editar Perfil</a> </li>
+                            <li><a class="btn btn-primary" href="{% url 'AppRegistrosRegistros' %}">Registrar Cliente</a></li>
+                            <li><a class="btn btn-primary" href="{% url 'UserExclusivoLogout' %}">Logout</a></li>
+                        </ul>
+                    </li>
+
+                {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosInicio' %}">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosServicios' %}">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosPortafolio' %}">Portafolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosEquipo' %}">Equipo</a></li>
+                    <a class="btn btn-primary" href="{% url 'UserExclusivoLogin' %}" style="margin-right: 20px">Login</a>
+
+                {% endif %}
+
             </ul>
         </div>
     </div>
@@ -47,9 +68,6 @@
 {% block equipo %}{% endblock equipo %}
 {% block busqueda %}{% endblock busqueda %}
 {% block busquedafiltrado %}{% endblock busquedafiltrado %}
-
-
-
 
 <footer class="footer py-4">
     <div class="container">

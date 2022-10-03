@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+    {{ titulo_form }}
+{% endblock title %}
+
+{% block index %}
+    {% load static %}
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            {% block formulario %}
+
+                <h2>{{ titulo_form }}</h2>
+
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <input type="submit" value="{{ boton_envio }}">
+
+                </form>
+
+            {% endblock formulario %}
+        </div>
+    </header>
+
+{% endblock index %}
+
+
