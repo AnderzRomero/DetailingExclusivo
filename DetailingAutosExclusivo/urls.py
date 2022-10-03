@@ -8,6 +8,6 @@ urlpatterns = [
     path('', lambda req: redirect('AppRegistrosInicio')),
     path('admin/', admin.site.urls),
     path('AppRegistros/', include('AppRegistros.urls')),
-    path('UserExclusivo/', include('UserExclusivo.urls'))
+    path('UserExclusivo/', include('UserExclusivo.urls')),
 ]
 

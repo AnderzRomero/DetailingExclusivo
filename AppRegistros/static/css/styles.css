@@ -3039,6 +3039,7 @@ textarea.form-control-lg {
   background-color: #d9aa00;
   border-color: #cca000;
 }
+
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #fff;
   background-color: #d9aa00;
@@ -3952,8 +3953,11 @@ textarea.form-control-lg {
     transition: none;
   }
 }
+
+
 .nav-link:hover, .nav-link:focus {
   color: #cca000;
+
 }
 .nav-link.disabled {
   color: #6c757d;
@@ -4070,6 +4074,22 @@ textarea.form-control-lg {
 }
 .navbar-nav .dropdown-menu {
   position: static;
+}
+.na li {
+  list-style: none;
+}
+
+.na li a {
+  display: block;
+  text-decoration: none;
+}
+.na > li {
+  float: left;
+}
+.na li ul{
+  display:block;
+  position: absolute;
+  min-width: 140px;
 }
 
 .navbar-text {

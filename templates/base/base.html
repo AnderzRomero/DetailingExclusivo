@@ -37,15 +37,18 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosServicios' %}">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosPortafolio' %}">Portafolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosEquipo' %}">Equipo</a></li>
-
                     <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosBusquedaNombre' %}">Busqueda</a></li>
-                    <li><a class="btn btn-primary" href="{% url 'UserExclusivoRegister' %}">Administrador</a>
-                        <ul>
-                            <li><a class="btn btn-primary" href="{% url 'UserExclusivoEditar' %}">Editar Perfil</a> </li>
-                            <li><a class="btn btn-primary" href="{% url 'AppRegistrosRegistros' %}">Registrar Cliente</a></li>
-                            <li><a class="btn btn-primary" href="{% url 'UserExclusivoLogout' %}">Logout</a></li>
-                        </ul>
-                    </li>
+
+
+                    <ul class="na">
+                        <li><a href="{% url 'UserExclusivoRegister' %}">Administrador</a>
+                            <ul>
+                                <li><a  href="{% url 'UserExclusivoEditar' %}">Editar Perfil</a> </li>
+                                <li><a  href="{% url 'AppRegistrosRegistros' %}">Registrar Cliente</a></li>
+                                <li><a  href="{% url 'UserExclusivoLogout' %}">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
 
                 {% else %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'AppRegistrosInicio' %}">Inicio</a></li>
