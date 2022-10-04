@@ -34,7 +34,7 @@ def upload_avatar(request):
         "form": AvatarForm(),
         'boton_envio': 'Crear'
     }
-    return render(request, "base_formulario.html", contexto)
+    return render(request, "base_formularios.html", contexto)
 
 
 @login_required

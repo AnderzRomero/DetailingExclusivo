@@ -11,4 +11,5 @@ urlpatterns = [
     path('UserExclusivo/', include('UserExclusivo.urls')),
 ]
 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
